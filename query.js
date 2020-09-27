@@ -92,8 +92,22 @@ mongoose.connect('mongodb://localhost:27017/test-mongoose', {
 //     .catch(err => console.log(err))
 
 //update many
-Course.updateMany({
-    $unset: { isPublished: 1 }
-})
+// Course.updateMany({
+//     $unset: { isPublished: 1 }
+// })
+// .then(console.log)
+// .catch(err => console.log(err))
+
+//delete one
+// Course.deleteOne({author:"Mosh"})
+// .then(console.log)
+// .catch(err => console.log(err))
+
+//delete many
+// Course.deleteMany({author:"Mosh"})
+// .then(console.log)
+// .catch(err => console.log(err))
+
+//find and remove
+Course.findOneAndDelete({ author:"Mary"})
 .then(console.log)
-.catch(err => console.log(err))
