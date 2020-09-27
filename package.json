@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/DoHuynhDucTB/test-mongoose/issues"
   },
-  "homepage": "https://github.com/DoHuynhDucTB/test-mongoose#readme"
+  "homepage": "https://github.com/DoHuynhDucTB/test-mongoose#readme",
+  "dependencies": {
+    "mongoose": "^5.10.7",
+    "nodemon": "^2.0.4"
+  }
 }
