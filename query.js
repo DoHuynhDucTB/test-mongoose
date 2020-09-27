@@ -54,12 +54,22 @@ mongoose.connect('mongodb://localhost:27017/test-mongoose', {
 //     .catch(err => console.log(err))
 
 //limit
-const pageNumber = 1;
-const pageSize = 3;
-Course.find()
-    .skip((pageNumber-1) * pageSize)
-    .limit(pageSize)
-    .select("name price isPublished")
-    .then(courses => console.log(courses))
-    .catch(err => console.log(err))
+// const pageNumber = 1;
+// const pageSize = 3;
+// Course.find()
+//     .skip((pageNumber-1) * pageSize)
+//     .limit(pageSize)
+//     .select("name price isPublished")
+//     .then(courses => console.log(courses))
+//     .catch(err => console.log(err))
+
+//find by id
+// Course.findById("5f705ed9c64bdf1d0c02d36a")
+// .then(course => console.log(course))
+// .catch(err => console.log(err))
+
+//find one
+Course.findOne({name: "React"})
+.then(course => console.log(course))
+.catch(err => console.log(err))
 
