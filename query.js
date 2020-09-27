@@ -41,7 +41,24 @@ mongoose.connect('mongodb://localhost:27017/test-mongoose', {
 //     .catch(err => console.log(err))
 
 //có name chứa chữ js
-Course.find({name: /.*JS.*/i})
+// Course.find({name: /.*JS.*/i})
+//     .select("name price isPublished")
+//     .then(courses => console.log(courses))
+//     .catch(err => console.log(err))
+
+//count
+// Course.find({name: /.*JS.*/i})
+//     .select("name price isPublished")
+//     .countDocuments()
+//     .then(courses => console.log(courses))
+//     .catch(err => console.log(err))
+
+//limit
+const pageNumber = 1;
+const pageSize = 3;
+Course.find()
+    .skip((pageNumber-1) * pageSize)
+    .limit(pageSize)
     .select("name price isPublished")
     .then(courses => console.log(courses))
     .catch(err => console.log(err))
