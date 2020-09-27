@@ -68,8 +68,32 @@ mongoose.connect('mongodb://localhost:27017/test-mongoose', {
 // .then(course => console.log(course))
 // .catch(err => console.log(err))
 
-//find one
-Course.findOne({name: "React"})
-.then(course => console.log(course))
-.catch(err => console.log(err))
+//find one  
+// Course.findOne({name: "React"})
+// .then(course => console.log(course))
+// .catch(err => console.log(err))
 
+//update
+// Course.findById("5f705ed9c64bdf1d0c02d36a")
+//     .then(course => {
+//         course.author = "tacgia 11";
+//         course.save()
+//             .then(course => console.log(course))
+//             .catch(err => console.log(err))
+//     })
+
+//updateone
+// Course.updateOne({ _id: "5f705ed9c64bdf1d0c02d36a"}, {
+//         $set: {
+//             name: "nodejs"
+//         }
+//     })
+//     .then(console.log)
+//     .catch(err => console.log(err))
+
+//update many
+Course.updateMany({
+    $unset: { isPublished: 1 }
+})
+.then(console.log)
+.catch(err => console.log(err))
