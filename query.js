@@ -8,7 +8,41 @@ mongoose.connect('mongodb://localhost:27017/test-mongoose', {
     .then(() => console.log('kết nối thành công'))
     .catch(err => console.log(err))
 
-Course.find({ author: "Mosh"})
-    .select("name price")
+//in    
+// Course.find({ price: {$in: [10, 20]} })
+//     .select("name price")
+//     .then(courses => console.log(courses))
+//     .catch(err => console.log(err))
+
+//and
+// Course.find()
+//     .and([ {author: "Mosh"}, {isPublished: false} ])
+//     .select("name price isPublished")
+//     .then(courses => console.log(courses))
+//     .catch(err => console.log(err))
+
+//or
+// Course.find()
+//     .or([ {author: "Mosh"}, {isPublished: true} ])
+//     .select("name price isPublished")
+//     .then(courses => console.log(courses))
+//     .catch(err => console.log(err))
+
+//name bắt đầu bằng Node
+// Course.find({name: /^Node/i})
+//     .select("name price isPublished")
+//     .then(courses => console.log(courses))
+//     .catch(err => console.log(err))
+
+//name kết thúc bằng js
+// Course.find({name: /JS$/i})
+//     .select("name price isPublished")
+//     .then(courses => console.log(courses))
+//     .catch(err => console.log(err))
+
+//có name chứa chữ js
+Course.find({name: /.*JS.*/i})
+    .select("name price isPublished")
     .then(courses => console.log(courses))
     .catch(err => console.log(err))
+
